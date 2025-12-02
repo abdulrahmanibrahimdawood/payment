@@ -10,6 +10,6 @@ class CheckOutApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyCartView());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: MyCartView());
   }
 }
