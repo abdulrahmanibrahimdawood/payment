@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payment/core/widgets/custom_button.dart';
+import 'package:payment/features/checkout/presentation/views/payment_details_view.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/order_info_item.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/total_price_widget.dart';
 
@@ -13,7 +14,7 @@ class MyCartViewBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 18),
-          Image.asset("assets/images/basket_image.png"),
+          Expanded(child: Image.asset("assets/images/basket_image.png")),
           SizedBox(height: 25),
           OrderInfoItem(title: 'Order Subtotal', value: '\$ 1,000'),
           SizedBox(height: 3),
@@ -22,9 +23,19 @@ class MyCartViewBody extends StatelessWidget {
           OrderInfoItem(title: 'Shipping', value: '\$ 20'),
           Divider(height: 34, thickness: 2, color: Color(0xffC7C7C7)),
           TotalPrice(title: 'Total', value: '\$1,020'),
-          Spacer(),
-          CustomButton(),
-          SizedBox(height: 84),
+          SizedBox(height: 16),
+          CustomButton(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return PaymentDetailsView();
+                  },
+                ),
+              );
+            },
+          ),
+          SizedBox(height: 56),
         ],
       ),
     );
