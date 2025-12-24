@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_credit_card/flutter_credit_card.dart';
+import 'package:payment/features/checkout/presentation/views/widgets/custom_credit_card.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/payment_methods_list_view.dart';
 
 class PaymentDetailsViewBody extends StatelessWidget {
@@ -7,42 +7,16 @@ class PaymentDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(height: 12),
-        SizedBox(height: 62, child: PaymentMethodsListView()),
-        SizedBox(height: 12),
-        CustomCreditCard(),
-      ],
-    );
-  }
-}
-
-class CustomCreditCard extends StatefulWidget {
-  const CustomCreditCard({super.key});
-
-  @override
-  State<CustomCreditCard> createState() => _CustomCreditCardState();
-}
-
-class _CustomCreditCardState extends State<CustomCreditCard> {
-  String cardNumber = '', expiryDate = '', cardHolderName = '', cvvCode = '';
-
-  bool showBackView = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CreditCardWidget(
-          cardNumber: cardNumber,
-          expiryDate: expiryDate,
-          cardHolderName: cardHolderName,
-          cvvCode: cvvCode,
-          showBackView: showBackView,
-          onCreditCardWidgetChange: (value) {},
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(height: 12),
+          SizedBox(height: 62, child: PaymentMethodsListView()),
+          SizedBox(height: 8),
+          CustomCreditCard(),
+          SizedBox(height: 8),
+        ],
+      ),
     );
   }
 }
