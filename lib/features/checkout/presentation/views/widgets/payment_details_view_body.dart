@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payment/features/checkout/presentation/views/widgets/payment_method_item.dart';
+import 'package:payment/features/checkout/presentation/views/widgets/payment_methods_list_view.dart';
 
 class PaymentDetailsViewBody extends StatelessWidget {
   const PaymentDetailsViewBody({super.key});
@@ -9,7 +9,7 @@ class PaymentDetailsViewBody extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 12),
-        PaymentMethodItem(),
+        SizedBox(height: 62, child: PaymentMethodsListView()),
         // ),
       ],
     );
