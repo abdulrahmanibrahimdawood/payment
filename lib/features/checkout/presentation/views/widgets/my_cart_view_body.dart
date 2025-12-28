@@ -25,6 +25,7 @@ class MyCartViewBody extends StatelessWidget {
           TotalPrice(title: 'Total', value: '\$1,020'),
           SizedBox(height: 16),
           CustomButton(
+            text: 'Complete Payment',
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
