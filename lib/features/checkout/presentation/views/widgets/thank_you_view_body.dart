@@ -20,12 +20,12 @@ class ThankYouViewBody extends StatelessWidget {
           child: ThankYouCard(),
         ),
         Positioned(
-          bottom: MediaQuery.of(context).size.width * 0.4,
+          bottom: MediaQuery.of(context).size.width * 0.6,
           child: CircleAvatar(radius: 24, backgroundColor: Colors.white),
         ),
         Positioned(
           right: 0,
-          bottom: MediaQuery.of(context).size.width * 0.4,
+          bottom: MediaQuery.of(context).size.width * 0.6,
           child: CircleAvatar(radius: 24, backgroundColor: Colors.white),
         ),
         Positioned(
@@ -36,7 +36,7 @@ class ThankYouViewBody extends StatelessWidget {
         Positioned(
           left: 56,
           right: 56,
-          bottom: MediaQuery.of(context).size.width * 0.4 + 19,
+          bottom: MediaQuery.of(context).size.width * 0.6 + 19,
           child: CustomDashedLine(),
         ),
       ],

@@ -45,4 +45,11 @@ abstract class TextStyles {
     fontFamily: 'Inter',
     fontWeight: FontWeight.w500,
   );
+
+  static TextStyle style16 = TextStyle(
+    color: Colors.black.withValues(alpha: 0.70),
+    fontSize: 16,
+    fontFamily: 'Inter',
+    fontWeight: FontWeight.w400,
+  );
 }
