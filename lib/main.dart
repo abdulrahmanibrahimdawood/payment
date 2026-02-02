@@ -13,4 +13,3 @@ class CheckOutApp extends StatelessWidget {
     return MaterialApp(debugShowCheckedModeBanner: false, home: MyCartView());
   }
 }
-// 
