@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:payment/core/styles/text_styles.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/card_info_widget.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/payment_item_info.dart';
@@ -42,6 +43,38 @@ class ThankYouCard extends StatelessWidget {
               TotalPrice(title: 'Total', value: '\$50.97'),
               SizedBox(height: 24),
               CardInfoWidget(),
+              Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(FontAwesomeIcons.barcode, size: 64),
+                  Container(
+                    width: 113,
+                    height: 58,
+                    decoration: ShapeDecoration(
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          width: 1.50,
+                          color: const Color(0xFF34A853),
+                        ),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'PAID',
+                        textAlign: TextAlign.center,
+                        style: TextStyles.style24.copyWith(
+                          color: const Color(0xFF34A853),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: (MediaQuery.of(context).size.width * 0.6 + 19) / 2.9,
+              ),
             ],
           ),
         ),
