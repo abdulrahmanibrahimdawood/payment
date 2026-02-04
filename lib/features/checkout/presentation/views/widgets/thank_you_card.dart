@@ -13,11 +13,11 @@ class ThankYouCard extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: ShapeDecoration(
-        color: Color(0xffD9D9D9),
+        color: Color(0xffD9D9D9).withAlpha(120),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(top: 104.0),
+        padding: const EdgeInsets.only(top: 88.0),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(

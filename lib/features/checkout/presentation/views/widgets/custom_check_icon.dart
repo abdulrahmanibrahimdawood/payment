@@ -6,12 +6,12 @@ class CustomCheckIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      radius: 56,
-      backgroundColor: Color(0xffD9D9D9),
+      radius: 48,
+      backgroundColor: Color(0xffD9D9D9).withAlpha(120),
       child: CircleAvatar(
-        radius: 48,
+        radius: 40,
         backgroundColor: Colors.green,
-        child: Icon(Icons.check, color: Colors.white, size: 72),
+        child: Icon(Icons.check, color: Colors.white, size: 56),
       ),
     );
   }
