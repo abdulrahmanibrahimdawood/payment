@@ -13,3 +13,7 @@ class CheckOutApp extends StatelessWidget {
     return MaterialApp(debugShowCheckedModeBanner: false, home: MyCartView());
   }
 }
+
+// paymentintentObject CreatePaymentIntent(String amount, String currency)
+// initpaymentSheet (string paymentIntentClientSecret)
+// presentPaymentSheet()
