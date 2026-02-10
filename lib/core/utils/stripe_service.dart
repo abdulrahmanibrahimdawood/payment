@@ -1,3 +1,4 @@
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:payment/core/utils/api_keys.dart';
 import 'package:payment/core/utils/api_service.dart';
 import 'package:payment/features/checkout/data/models/payment_intent_input_model.dart';
@@ -15,5 +16,20 @@ class StripeService {
     );
     var paymentIntentModel = PaymentIntentModel.fromJson(response.data);
     return paymentIntentModel;
+  }
+
+  Future initPaymentSheet({
+    required String paymentIntentClientSecret,
+    // required String customerId,
+    // required String ephemeralKeySecret,
+  }) async {
+    await Stripe.instance.initPaymentSheet(
+      paymentSheetParameters: SetupPaymentSheetParameters(
+        paymentIntentClientSecret: paymentIntentClientSecret,
+        merchantDisplayName: 'Flutter Stripe Store Demo',
+        // customerId: customerId,
+        // customerEphemeralKeySecret: ephemeralKeySecret,
+      ),
+    );
   }
 }
