@@ -34,6 +34,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
           text: 'Continue',
           onTap: () {
             PaymentIntentInputModel inputModel = PaymentIntentInputModel(
+              customerId: 'cus_U3U1v7h3z8EoSX',
               amount: '1020',
               currency: 'USD',
             );

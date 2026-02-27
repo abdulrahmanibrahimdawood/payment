@@ -17,6 +17,8 @@ class CheckOutApp extends StatelessWidget {
   }
 }
 
-// paymentintentObject CreatePaymentIntent(String amount, String currency)
-// initpaymentSheet (string paymentIntentClientSecret)
+// ==============   If you apply these steps, the flow will be better than before   ===============
+// PaymentIntentModel createPaymentIntent( amount, currency , customerId)
+// keySecrit createEphemeralKey( customerId)
+// InitPaymentSheet( merchantDisplayName, paymentIntentClientSecret, ephemeralKeySecret)
 // presentPaymentSheet()
