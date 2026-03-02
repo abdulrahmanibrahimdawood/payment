@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:payment/core/widgets/custom_button.dart';
@@ -22,6 +24,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
           );
         }
         if (state is StripePaymentFailure) {
+          log(state.errMessage);
           Navigator.of(context).pop();
           ScaffoldMessenger.of(
             context,

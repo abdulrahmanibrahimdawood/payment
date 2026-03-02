@@ -48,11 +48,7 @@ class StripeService {
       contentType: Headers.formUrlEncodedContentType,
       token: ApiKeys.secretKey,
       url: 'https://api.stripe.com/v1/ephemeral_keys',
-
-      headers: {
-        'Authorization': 'Bearer ${ApiKeys.secretKey}',
-        'Stripe-Version': '2026-01-28.clover',
-      },
+      headers: {'Stripe-Version': '2024-06-20'},
     );
     var paymentIntentModel = EphemeralKeyModel.fromJson(response.data);
     return paymentIntentModel;
