@@ -24,11 +24,11 @@ class StripePaymentCubit extends Cubit<StripePaymentState> {
         emit(StripePaymentSuccess());
       },
     );
-
-    @override
-    void onChange(Change<StripePaymentState> change) {
-      log(change.toString());
-      print(change);
-    }
   }
+}
+
+@override
+void onChange(Change<StripePaymentState> change) {
+  log(change.toString());
+  log('$change');
 }
