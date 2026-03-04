@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/custom_button_bloc_consumer.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/payment_methods_list_view.dart';
 
-class PaymentMethodsBottomSheet extends StatelessWidget {
+class PaymentMethodsBottomSheet extends StatefulWidget {
   const PaymentMethodsBottomSheet({super.key});
 
+  @override
+  State<PaymentMethodsBottomSheet> createState() =>
+      _PaymentMethodsBottomSheetState();
+}
+
+class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
+  bool isPaypal = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,7 +23,7 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
 
           SizedBox(height: 64, child: const PaymentMethodsListView()),
           SizedBox(height: 32),
-          CustomButtonBlocConsumer(),
+          CustomButtonBlocConsumer(isPaypal: isPaypal),
         ],
       ),
     );
