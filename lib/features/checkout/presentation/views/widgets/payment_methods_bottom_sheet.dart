@@ -12,6 +12,15 @@ class PaymentMethodsBottomSheet extends StatefulWidget {
 
 class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
   bool isPaypal = false;
+  updatePaymentMethod({required int index}) {
+    if (index == 0) {
+      isPaypal = false;
+    } else {
+      isPaypal = true;
+    }
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,7 +30,12 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
         children: [
           SizedBox(height: 32),
 
-          SizedBox(height: 64, child: const PaymentMethodsListView()),
+          SizedBox(
+            height: 64,
+            child: PaymentMethodsListView(
+              updatePaymentMethod: updatePaymentMethod,
+            ),
+          ),
           SizedBox(height: 32),
           CustomButtonBlocConsumer(isPaypal: isPaypal),
         ],
